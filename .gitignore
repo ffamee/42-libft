@@ -1,2 +1,4 @@
 .vscode
-
+tester_libft.c
+*.o
+*.exe
