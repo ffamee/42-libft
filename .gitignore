@@ -2,3 +2,4 @@
 tester_libft.c
 *.o
 *.exe
+*.gch
