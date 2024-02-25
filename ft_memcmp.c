@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smalasut <smalasut@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/24 22:18:25 by smalasut          #+#    #+#             */
-/*   Updated: 2024/02/24 22:18:25 by smalasut         ###   ########.fr       */
+/*   Created: 2024/02/25 22:32:57 by smalasut          #+#    #+#             */
+/*   Updated: 2024/02/25 22:32:57 by smalasut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	i;
+	size_t			i;
+	unsigned char	*ps1;
+	unsigned char	*ps2;
 
-	if (!dest || !src)
+	if (!n)
 		return (0);
+	ps1 = (unsigned char *)s1;
+	ps2 = (unsigned char *)s2;
 	i = 0;
-	while (src[i] && i + 1 < size)
+	while (i < n && ps1[i] && ps2[i])
 	{
-		dest[i] = src[i];
+		if (ps1[i] != ps2[i])
+			return ((unsigned char)ps1[i] - (unsigned char)ps2[i]);
 		i++;
 	}
-	dest[i] = '\0';
-	return (ft_strlen(src));
+	return ((unsigned char)ps1[i] - (unsigned char)ps2[i]);
 }

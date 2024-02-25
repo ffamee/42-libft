@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smalasut <smalasut@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/24 22:18:25 by smalasut          #+#    #+#             */
-/*   Updated: 2024/02/24 22:18:25 by smalasut         ###   ########.fr       */
+/*   Created: 2024/02/25 22:41:26 by smalasut          #+#    #+#             */
+/*   Updated: 2024/02/25 22:41:26 by smalasut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 {
+	char	*ps1;
+	char	*ps2;
 	size_t	i;
+	size_t	n;
 
-	if (!dest || !src)
-		return (0);
+	if (!s2)
+		return ((char *)s1);
+	ps1 = (char *)s1;
+	ps2 = (char *)s2;
 	i = 0;
-	while (src[i] && i + 1 < size)
+	n = ft_strlen(ps2);
+	while (*ps1 && i < len)
 	{
-		dest[i] = src[i];
+		if (*ps1 == *ps2 && ft_strncmp(ps1, ps2, n) == 0)
+			return (ps1);
+		ps1++;
 		i++;
 	}
-	dest[i] = '\0';
-	return (ft_strlen(src));
+	return (NULL);
 }

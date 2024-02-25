@@ -1,29 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smalasut <smalasut@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/24 22:18:25 by smalasut          #+#    #+#             */
-/*   Updated: 2024/02/24 22:18:25 by smalasut         ###   ########.fr       */
+/*   Created: 2024/02/25 22:57:43 by smalasut          #+#    #+#             */
+/*   Updated: 2024/02/25 22:57:43 by smalasut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+int	ft_atoi(const char *nptr)
 {
-	size_t	i;
+	char		*ptr;
+	int			s;
+	long long	l;
 
-	if (!dest || !src)
+	if (!nptr)
 		return (0);
-	i = 0;
-	while (src[i] && i + 1 < size)
+	ptr = (char *)nptr;
+	while (*ptr == ' ' || *ptr == '\t' || *ptr == '\n'
+			|| *ptr == '\v' || *ptr == '\f' || *ptr == '\r')
+		ptr++;
+	if (*ptr == '+' || *ptr == '-')
 	{
-		dest[i] = src[i];
-		i++;
+		if (*ptr == '-')
+			s = -1;
+		ptr++;
 	}
-	dest[i] = '\0';
-	return (ft_strlen(src));
+	l = 0;
+	while (ft_isdigit(*ptr))
+	{
+		l = (l * 10) + (*ptr - '0');
+		ptr++;
+	}
+	return ((int)(s * l));
 }
