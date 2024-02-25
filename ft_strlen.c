@@ -6,7 +6,7 @@
 /*   By: smalasut <smalasut@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 18:07:55 by smalasut          #+#    #+#             */
-/*   Updated: 2024/02/24 22:43:41 by smalasut         ###   ########.fr       */
+/*   Updated: 2024/02/26 02:36:26 by smalasut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ size_t	ft_strlen(const char *c)
 {
 	size_t	i;
 
+	i = 0;
 	while (c[i])
 	{
 		i++;

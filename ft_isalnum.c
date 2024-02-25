@@ -6,7 +6,7 @@
 /*   By: smalasut <smalasut@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 17:41:45 by smalasut          #+#    #+#             */
-/*   Updated: 2024/02/20 17:43:09 by smalasut         ###   ########.fr       */
+/*   Updated: 2024/02/26 01:16:42 by smalasut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int	ft_isalnum(int c)
 {
-	return ((ft_isalnum(c)) || (ft_isalpha(c)));
+	return ((ft_isdigit(c)) || (ft_isalpha(c)));
 }
