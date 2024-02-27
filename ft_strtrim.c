@@ -20,7 +20,7 @@ char	*ft_strtrim(const char *s1, const char *set)
 	if (!s1 || !set)
 		return (NULL);
 	str = (char *)s1;
-	while (ft_strchr(set, *str))
+	while (*str && ft_strchr(set, *str))
 		str++;
 	n = ft_strlen(str);
 	while (n && ft_strchr(set, *(str + n - 1)))

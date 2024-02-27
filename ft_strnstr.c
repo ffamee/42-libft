@@ -19,10 +19,10 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 	size_t	i;
 	size_t	n;
 
-	if (!s2)
-		return ((char *)s1);
 	ps1 = (char *)s1;
 	ps2 = (char *)s2;
+	if (!len && !ps1)
+		return (ps1);
 	i = 0;
 	n = ft_strlen(ps2);
 	if (!n)

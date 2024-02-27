@@ -44,7 +44,8 @@ static size_t	cword(const char *ptr, char c)
 	{
 		while (ptr[i] == c)
 			i++;
-		n++;
+		if (ptr[i])
+			n++;
 		while (ptr[i] && ptr[i] != c)
 			i++;
 	}

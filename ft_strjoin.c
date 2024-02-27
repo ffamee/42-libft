@@ -17,16 +17,24 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	char	*join;
 	size_t	i;
 	size_t	j;
+	size_t	si;
+	size_t	sj;
 
-	join = (char *)malloc((ft_strlen(s1) + ft_strlen(s2) + 1));
+	si = 0;
+	sj = 0;
+	if (s1)
+		si = ft_strlen(s1);
+	if (s2)
+		sj = ft_strlen(s2);
+	join = (char *)malloc((si + sj + 1));
 	if (!join)
 		return (NULL);
 	i = 0;
 	j = 0;
-	while (s1[j])
+	while (si && s1[j])
 		join[i++] = s1[j++];
 	j = 0;
-	while (s2[j])
+	while (sj && s2[j])
 		join[i++] = s2[j++];
 	join[i] = '\0';
 	return (join);

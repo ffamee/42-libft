@@ -3,3 +3,6 @@ tester_libft.c
 *.o
 *.exe
 *.gch
+a.out
+savenorme
+libft.so

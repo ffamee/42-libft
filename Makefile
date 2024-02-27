@@ -52,7 +52,7 @@ OBJS		= $(SRCS:%.c=%.o)
 
 FLAGS		= -Wall -Wextra -Werror
 
-$(NAME):
+$(NAME): $(OBJS)
 	gcc $(FLAGS) -c $(SRCS) -I ./
 	ar rc $(NAME) $(OBJS)
 
@@ -65,3 +65,7 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+so:
+	gcc -nostartfiles -fPIC $(FLAGS) $(SRCS)
+	gcc -nostartfiles -shared -o libft.so $(OBJS)

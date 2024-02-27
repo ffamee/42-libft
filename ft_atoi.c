@@ -18,8 +18,6 @@ int	ft_atoi(const char *nptr)
 	int			s;
 	long long	l;
 
-	if (!nptr)
-		return (0);
 	ptr = (char *)nptr;
 	while (*ptr == ' ' || *ptr == '\t' || *ptr == '\n'
 		|| *ptr == '\v' || *ptr == '\f' || *ptr == '\r')
